@@ -23,7 +23,7 @@ class DashboardShowcaseController extends AbstractController
 
     public function create()
     {
-        return $this->render('dashboard_showcase/index.html.twig', [
+        return $this->render('dashboard_showcase/create.html.twig', [
             'controller_name' => 'Создать товар',
         ]);
     }
