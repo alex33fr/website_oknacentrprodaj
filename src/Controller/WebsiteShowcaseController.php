@@ -8,12 +8,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class WebsiteShowcaseController extends AbstractController
 {
     /**
-     * @Route("/website/showcase", name="website_showcase")
+     * @Route("/", name="website_showcase")
      */
     public function index()
     {
         return $this->render('website_showcase/index.html.twig', [
-            'controller_name' => 'WebsiteShowcaseController',
+            'controller_name' => 'Главная',
+        ]);
+    }
+
+    /**
+     * @Route("/product", name="show_product")
+     */
+    public function product()
+    {
+        return $this->render('website_showcase/product.html.twig', [
+            'controller_name' => 'Товары',
         ]);
     }
 }
