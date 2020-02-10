@@ -3,4 +3,10 @@
 {% block title %}{{ controller_name }}{% endblock %}
 
 {% block body %}
+    <article class="products">
+        <h2>{{ product.title }}</h2>
+        <img src="{{ product.image }}" alt="Image" class="img-thumbnail">
+        <h3>{{ product.model }}</h3>
+        <p>{{ product.descTwo }}</p>
+    </article>
 {% endblock %}

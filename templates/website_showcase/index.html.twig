@@ -3,4 +3,13 @@
 {% block title %}{{ controller_name }}{% endblock %}
 
 {% block body %}
+    {% for product in products %}
+            <article class="products">
+                <h2>{{ product.title }}</h2>
+                <img src="{{ product.image }}" alt="Image" class="img-thumbnail">
+                <h3>{{ product.model }}</h3>
+                <p>{{ product.descOne }}</p>
+                <a href="{{ path('show_product', {'id' : product.id}) }}" class="btn btn-danger">Перейти</a>
+            </article>
+        {% endfor %}
 {% endblock %}
