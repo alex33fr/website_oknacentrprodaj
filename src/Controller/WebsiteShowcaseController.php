@@ -19,7 +19,7 @@ class WebsiteShowcaseController extends AbstractController
     {
         $products = $productRepository->findAll();
         return $this->render('website_showcase/index.html.twig', [
-            'controller_name' => 'Главная',
+            'template_name' => 'Главная',
             'products' => $products
         ]);
     }
@@ -32,8 +32,9 @@ class WebsiteShowcaseController extends AbstractController
     public function product(Product $product)
     {
         return $this->render('website_showcase/show_product.html.twig', [
-            'controller_name' => 'Товары',
+            'template_name' => 'Товары',
             'product' => $product
         ]);
+
     }
 }

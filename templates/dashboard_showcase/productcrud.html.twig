@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}{{ template_name }}{% endblock %}
+
+{% block body %}
+
+    <h2>{{ template_name }}</h2>
+
+    {{ form_start(form) }}
+    {{ form_row(form.title, {'label' : 'Название товара', 'attr': {'placeholder' : "Двери белого цвета"}}) }}
+    {{ form_row(form.model, {'label' : 'Модель товара', 'attr': {'placeholder' : "FE41AD4"}}) }}
+    {{ form_row(form.color, {'label' : 'Цвет товара','attr': {'placeholder' : "Цвет товара"}}) }}
+    {{ form_row(form.image, {'label' : 'Картинка товара','attr': {'placeholder' : "Ссылка"}}) }}
+    {{ form_row(form.descOne, {'label' : 'Краткое описание товара','attr': {'placeholder' : "Текст в 300 символов"}}) }}
+    {{ form_row(form.descTwo, {'label' : 'Основное описание товара','attr': {'placeholder' : "Полное описание товара"}}) }}
+    <button type="submit" class="btn btn-danger col-12">
+    {% if editMode %}
+        Изменить
+    {% else %}
+        Создать новый товар
+    {% endif %}
+    </button>
+    {{ form_end(form) }}
+
+
+{% endblock %}
